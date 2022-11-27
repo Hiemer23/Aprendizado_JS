@@ -39,7 +39,7 @@ const banco = (valor)=>{
                     break
                 case 2: valor_cedula=10.00
                     break
-                case 3: valor_cedula=50.00
+                case 3: valor_cedula=5.00
                     break
                 case 4: valor_cedula=1.00
                     break
@@ -50,4 +50,4 @@ const banco = (valor)=>{
     return(argumento)
 }
 
-console.log(banco(16))
+console.log(banco(148))
