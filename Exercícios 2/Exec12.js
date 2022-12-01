@@ -19,9 +19,8 @@ const removerPropriedade = (objeto,propriedade)=>{
     console.log("Aqui é o objeto: \n",objeto)
     console.log("Aqui é o outro objeto: \n",vet)
     delete vet[propriedade]
-    console.log("Aqui é o vetor: \n",vet)
+    console.log("Aqui é o objeto sem a propriedade informada: \n",vet)
     return console.log(vet)
 }
 
 removerPropriedade({a: 1, b: 2}, "a")
-console.log(Object.is(removerPropriedade({a: 1, b: 2}, "a"),{a: 1, b: 2}))
