@@ -5,5 +5,6 @@ const produtos = [
     { nome: 'Copo de plástico', preco: 18.99, fragil: false }
 ]
 
-const mais_caros = produtos.filter((x) => x.preco >= 15 && x.fragil == true).map(x => x.nome)
+console.log(produtos)
+const mais_caros = produtos.filter((prod) => prod.preco >= 15 && prod.fragil == true).map((prod)=>prod.nome)
 console.log(mais_caros)
