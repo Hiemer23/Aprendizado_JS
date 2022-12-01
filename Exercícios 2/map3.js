@@ -7,10 +7,11 @@ let num3
 Array.prototype.map2 = function(callback){
     let a2 =[]
     for(let i=0;i<this.length;i++){
-        a2.push (callback(this[i]))
+        a2.push (callback(this[i],i,this))
     }
     return a2
 }
+
 
 num2 = num1.map2((num) => num * 2)
 console.log("Original:\n", num1)
