@@ -2,7 +2,8 @@
 Num projeto que você está trabalhando, você foi designado a refatorar diversas funções para que façam cópias de objetos e manipulem os dados dessas cópias, com o intuito de evitar efeitos indesejáveis em algumas situações devido a referências a objetos. Abaixo, está a descrição de uma dessas funções.
 Você escreverá uma função que recebe um objeto como primeiro parâmetro e, como segundo parâmetro, o nome de uma propriedade contida nesse objeto. Em seguida, retorne uma cópia desse objeto sem a propriedade especificada no segundo parâmetro.
 Exemplos:
-removerPropriedade({a: 1, b: 2}, "a") // retornará {b: 2} removerPropriedade({
+removerPropriedade({a: 1, b: 2}, "a") // retornará {b: 2}
+removerPropriedade({
 id: 20,
 nome: "caneta",
 descricao: "Não preenchido"
@@ -14,13 +15,18 @@ Object.is(removerPropriedade(objeto, "descricao"), objeto)
 Retornará false se o objeto não for o mesmo.
 */
 
-const removerPropriedade = (objeto,propriedade)=>{
+const removerPropriedade = (objeto, propriedade) => {
     let vet = Object.assign(objeto)
-    console.log("Aqui é o objeto: \n",objeto)
-    console.log("Aqui é o outro objeto: \n",vet)
+    console.log("Aqui é o objeto: \n", objeto)
+    console.log("Aqui é o outro objeto: \n", vet)
     delete vet[propriedade]
-    console.log("Aqui é o objeto sem a propriedade informada: \n",vet)
+    console.log("Aqui é o objeto sem a propriedade informada: \n", vet)
     return console.log(vet)
 }
 
-removerPropriedade({a: 1, b: 2}, "a")
+removerPropriedade({ a: 1, b: 2 }, "a")
+removerPropriedade({
+    id: 20,
+    nome: "caneta",
+    descricao: "Não preenchido"
+}, "descricao")
