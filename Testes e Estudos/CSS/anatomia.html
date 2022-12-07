@@ -4,13 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Anatomia CSS</title>
-    <style>
-        /* ... */
-    </style>
+
 </head>
 
 <body>
     <div class="selector">Conteúdo</div>
 </body>
+<style>
+    .selector {
+        color: white;
+        font-size: 30px;
+        text-align: center;
+        border: solid 5px black;
+        font-family: Helvetica, monospace;
+        width: calc(100% - 200px);
+        background-color: rgb(8, 12, 66);
+    }
+
+    .selector:hover {
+        background-color: rgb(25, 36, 187);
+    }
+
+    .selector::first-letter {
+        font-size: 60px;
+        font-weight: bold;
+    }
+</style>
 
 </html>
