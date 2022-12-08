@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automcomplete Input</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Helvetica, Arial, sans-serif
+        }
+
+        body {
+            height: 100vh;
+            background-color: lightgray;
+        }
+
+        header {
+            background-color: #08090c;
+            height: 80px;
+            border-bottom: solid 5px #bb0a21;
+            box-sizing: content-box;
+        }
+
+        .logo {
+            display: inline-block;
+            height: 80px;
+            padding: 15px;
+        }
+
+        .logo img {
+            height: 100%;
+        }
+
+        form {
+            width: 75vmin;
+            height: 100%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            padding: 20px 0;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 15px 10px;
+            border: none;
+            border-bottom: 1px solid #645979;
+            outline: none;
+            border-radius: 5px 5px 0 0;
+            background-color: #ffffff;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .list {
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .list-items {
+            padding: 10px 5px;
+        }
+
+        .list-items:hover {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://logodownload.org/wp-content/uploads/2017/08/pokemon-logo-8.png" alt="Logo" />
+        </div>
+        <form autocomplete="off">
+            <div>
+                <input type="text" id="input" placeholder="Digite o pokemon..." />
+            </div>
+            <ul class="list"></ul>
+        </form>
+    </header>
+
+
+    <!--Script-->
+    <script src="scriptAuto.js"></script>
+</body>
+
+</html>
