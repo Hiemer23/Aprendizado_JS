@@ -193,14 +193,16 @@ function removeElements() {
     });
 }
 
-const url="https://raw.githubusercontent.com/Hiemer23/Projetos/main/Project.csv"
-async function getData(){
+const url = "https://raw.githubusercontent.com/Hiemer23/Projetos/main/Project2.csv"
+async function getData() {
     const response = await fetch(url);
     const rawData = await response.text();
-    const resultado = rawData.split(" ")
-
-    resultado.forEach(a=>console.log(a))
-    document.getElementById("csv").innerHTML=resultado;
+    const resultado = rawData.split("/")
+    //resultado.map(...arguments)
+    resultado.forEach((a)=>console.log(a))
+    
+    resultado.forEach(a => document.getElementById("csv").innerHTML = a)
+    //document.getElementById("csv").innerHTML=resultado;
 
 }
 
