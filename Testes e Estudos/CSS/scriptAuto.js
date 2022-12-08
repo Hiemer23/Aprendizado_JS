@@ -192,3 +192,16 @@ function removeElements() {
         item.remove();
     });
 }
+
+const url="https://raw.githubusercontent.com/Hiemer23/Projetos/main/Project.csv"
+async function getData(){
+    const response = await fetch(url);
+    const rawData = await response.text();
+    const resultado = rawData.split(" ")
+
+    resultado.forEach(a=>console.log(a))
+    document.getElementById("csv").innerHTML=resultado;
+
+}
+
+getData();

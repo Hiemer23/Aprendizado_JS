@@ -26,6 +26,8 @@
 
         .logo {
             display: inline-block;
+            display:flex;
+            align-items: left;
             height: 80px;
             padding: 15px;
         }
@@ -45,12 +47,12 @@
         }
 
         input[type="text"] {
+            display: flex;
             width: 100%;
             padding: 15px 10px;
             border: none;
-            border-bottom: 1px solid #645979;
             outline: none;
-            border-radius: 5px 5px 0 0;
+            border-radius: 15px;
             background-color: #ffffff;
             font-size: 16px;
         }
@@ -72,6 +74,18 @@
         .list-items:hover {
             background-color: #dddddd;
         }
+        .corpo{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: center;
+        }
+        .corpo li{
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            align-content: center;
+        }
     </style>
 </head>
 
@@ -87,7 +101,9 @@
             <ul class="list"></ul>
         </form>
     </header>
-
+    <div class="corpo">
+        <p id="csv"></p>
+    </div>
 
     <!--Script-->
     <script src="scriptAuto.js"></script>
