@@ -198,10 +198,12 @@ async function getData() {
     const response = await fetch(url);
     const rawData = await response.text();
     const resultado = rawData.split("/")
-    //resultado.map(...arguments)
-    resultado.forEach((a)=>console.log(a))
-    
-    resultado.forEach(a => document.getElementById("csv").innerHTML = a)
+    let pokemons =[]
+    for(let i in resultado){
+        pokemons[i]=resultado[i].split(";")
+    }
+    pokemons.forEach((pokemon)=>console.log(pokemon[1]))
+    //resultado.forEach(a => document.getElementById("csv").innerHTML = a)
     //document.getElementById("csv").innerHTML=resultado;
 
 }
