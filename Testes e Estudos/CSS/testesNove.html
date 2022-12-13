@@ -26,7 +26,7 @@
 
         .logo {
             display: inline-block;
-            display:flex;
+            display: flex;
             align-items: left;
             height: 80px;
             padding: 15px;
@@ -37,10 +37,10 @@
         }
 
         form {
-            width: 75vmin;
+            width: 500px;
             height: 100%;
             position: absolute;
-            transform: translate(-50%, -50%);
+            transform: translate(50%, -50%);
             top: 50%;
             left: 50%;
             padding: 20px 0;
@@ -48,11 +48,11 @@
 
         input[type="text"] {
             display: flex;
-            width: 100%;
+            width: 50%;
             padding: 15px 10px;
             border: none;
             outline: none;
-            border-radius: 15px;
+            border-radius: 15px 15px 0px 0px;
             background-color: #ffffff;
             font-size: 16px;
         }
@@ -62,9 +62,10 @@
         }
 
         .list {
-            width: 100%;
-            background-color: #ffffff;
+            width: 50%;
+            background-color:rgb(255, 255, 255,.5);
             border-radius: 0 0 5px 5px;
+            color:rgb(0,0,0,.5)
         }
 
         .list-items {
@@ -74,18 +75,37 @@
         .list-items:hover {
             background-color: #dddddd;
         }
-        .corpo{
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            align-content: center;
-        }
-        .corpo li{
+
+        .corpo li {
+            /* display:flex; */
+            /* border:solid 1px black; */
+            display: inline-block;
+            list-style: none;
+            /* text-align: center; */
             width: 200px;
             height: 200px;
-            text-align: center;
-            align-content: center;
+            /* align-items: flex-end; */
+
         }
+
+        .corpo img {
+            display: flex;
+            width: 90%;
+            /* align-content: flex-start; */
+            /* justify-content: center;
+            align-items: center; */
+            margin: auto;
+            display: block;
+        }
+
+        .nome {
+            display: flex;
+            width: 100%;
+            align-content: flex-start;
+            align-items: center;
+            justify-content: center;
+        }
+
     </style>
 </head>
 

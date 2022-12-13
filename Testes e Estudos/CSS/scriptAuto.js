@@ -151,6 +151,10 @@ let names = [
     "Mewtwo",
     "Mew"
 ];
+const url = "https://raw.githubusercontent.com/Hiemer23/Projetos/main/Project2.csv"
+const urlImages = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+const pokemons = []
+let stringPokemons = ""
 //Sort names in ascending order
 let sortedNames = names.sort();
 //reference
@@ -173,11 +177,16 @@ input.addEventListener("keyup", (e) => {
             listItem.style.cursor = "pointer";
             listItem.setAttribute("onclick", "displayNames('" + i + "')");
             //Display matched part in bold
-            let word = "<b>" + i.substr(0, input.value.length) + "</b>";
+            let word = i.substr(0, input.value.length);
             word += i.substr(input.value.length);
             //display the value in array
             listItem.innerHTML = word;
+            //console.log(listItem)
+            addPoke(i)
             document.querySelector(".list").appendChild(listItem);
+        }
+        else if (input.value == "") {
+            document.getElementById("csv").innerHTML = stringPokemons;
         }
     }
 });
@@ -191,21 +200,39 @@ function removeElements() {
     items.forEach((item) => {
         item.remove();
     });
+    stringPokemons1 = ""
+    items2 = document.querySelectorAll(".lista");
+    items2.forEach((item) => {
+        item.remove();
+    });
 }
 
-const url = "https://raw.githubusercontent.com/Hiemer23/Projetos/main/Project2.csv"
+
+
 async function getData() {
+
     const response = await fetch(url);
     const rawData = await response.text();
     const resultado = rawData.split("/")
-    let pokemons =[]
-    for(let i in resultado){
-        pokemons[i]=resultado[i].split(";")
+    
+    for (let i in resultado) {
+        pokemons[i] = resultado[i].split(";")
     }
-    pokemons.forEach((pokemon)=>console.log(pokemon[1]))
+    pokemons.forEach((pokemon) => {
+        stringPokemons += `<li class="lista"><img src="${urlImages + pokemon[0]}.png"><div class="nome">${pokemon[1]}</div></li>`
+    })
+    document.getElementById("csv").innerHTML = stringPokemons;
     //resultado.forEach(a => document.getElementById("csv").innerHTML = a)
     //document.getElementById("csv").innerHTML=resultado;
 
+}
+let stringPokemons1 = ""
+function addPoke(poke) {
+    pokemons.forEach((pokemon) => {
+        if (pokemon[1].includes(poke)) stringPokemons1 += `<li class="lista"><img src="${urlImages + pokemon[0]}.png"><div class="nome">${pokemon[1]}</div></li>`
+    })
+    document.getElementById("csv").innerHTML = stringPokemons1;
+    //console.log(stringPokemons1)
 }
 
 getData();
